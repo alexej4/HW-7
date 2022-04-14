@@ -1,0 +1,12 @@
+.ftr .logo {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    color: var(--white-next-color);
+    margin-bottom: 20px;
+}
+
+.ftr .logo:active {
+    color: var(--logo-color);
+}

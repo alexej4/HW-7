@@ -19,7 +19,15 @@
     cursor: pointer;
     padding-left: 42px;
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+&:hover,
+&:focus {
+    outline: none;
+    border: 1px solid var(--logo-color);
+}
+&:hover~.form-name-icon,
+&:focus~.form-name-icon {
+    fill: var(--logo-color);
+}
 }
 
 .label-title {
@@ -45,16 +53,14 @@
     box-sizing: border-box;
     border-radius: 4px;
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-form-message:hover,
-.modal-form-message:focus {
+&:hover,
+&:focus {
     outline: none;
     border: 1px solid var(--logo-color);
 }
-
-.modal-form-message::placeholder {
+&::placeholder {
     color: rgba(117, 117, 117, 0.5);
+}
 }
 
 .user-message {
@@ -72,18 +78,6 @@
     transform: translateY(-50%);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.modal-form-input:hover~.form-name-icon,
-.modal-form-input:focus~.form-name-icon {
-    fill: var(--logo-color);
-}
-
-.modal-form-input:hover,
-.modal-form-input:focus {
-    outline: none;
-    border: 1px solid var(--logo-color);
-}
-
 .checkbox-label {
     display: flex;
     align-items: center;
@@ -94,23 +88,7 @@
     text-align: center;
     margin-bottom: 25px;
     justify-content: center;
-}
-
-/* Делаем кастомный чекбокс */
-.checkbox-form:checked+.checkbox-label::before {
-    display: block;
-    background-image: url('../images/icon-check.svg');
-    background-color: var(--logo-color);
-    background-size: contain;
-    background-origin: border-box;
-    border: none;
-}
-
-.checkbox-form:focus+.checkbox-label::before {
-    outline: 1px solid var(--logo-color);
-}
-
-.checkbox-label::before {
+&::before {
     content: "";
     display: inline-block;
     width: 16px;
@@ -118,21 +96,19 @@
     border: 1px solid #555555;
     margin-right: 7px;
     cursor: pointer;
+    
+    .checkbox-form:checked+& {
+    display: block;
+    background-image: url('../images/icon-check.svg');
+    background-color: var(--logo-color);
+    background-size: contain;
+    background-origin: border-box;
+    border: none;
+    }
+    .checkbox-form:focus+& {
+        outline: 1px solid var(--logo-color);
+    }
 }
-
-/* Прячем чекбокс */
-
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
 }
 
 label>a {
@@ -151,13 +127,13 @@ label>a {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     font-weight: 700;
-    font-size: 16px;
     line-height: 1.87;
+    font-size: 16px;
     letter-spacing: 0.06em;
     color: var(--white-next-color);
-}
-
-.btn-modal:hover,
-.btn-modal:focus {
+&:hover,
+&:focus {
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.15);
 }
+}
+

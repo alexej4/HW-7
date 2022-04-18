@@ -36,9 +36,7 @@
     background-color: var(--logo-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
-}
-
-.subscription-button::after {
+&::after {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +47,7 @@
     background-image: url('../images/icon-send.svg');
     background-size: contain;
 }
-
+}
 .subscription-form-title {
     display: inline-block;
     font-style: normal;
